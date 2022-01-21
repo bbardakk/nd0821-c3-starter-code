@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 from starter.starter.ml.model import inference
 from starter.starter.ml.data import process_data
 import pickle
-import pandas as pd 
+
 
 class Data(BaseModel):
     age: int = Field(None, example=23)
@@ -21,6 +21,7 @@ class Data(BaseModel):
     capital_loss: int = Field(None, example=0)
     hours_per_week: int = Field(None, example=0)
     native_country: str = Field(None, example='United-States')
+
 
 with open('starter/model/gb_model.pkl', 'rb') as f:
     model = pickle.load(f)
@@ -42,9 +43,10 @@ def root():
 
 @app.post("/")
 async def infer(data: Data):
-    
+
     # fix column name issues
-    data = {key.replace('_', '-'): [value] for key, value in data.__dict__.items()}
+    data = {key.replace('_', '-'): [value]
+            for key, value in data.__dict__.items()}
 
     df = pd.DataFrame.from_dict(data)
 
@@ -65,11 +67,11 @@ async def infer(data: Data):
     )
 
     pred = inference(model, processed_row)[0]
-    
+
     if pred == 0:
 
         return '<=50K'
-    
+
     if pred == 1:
-    
+
         return '>50k'

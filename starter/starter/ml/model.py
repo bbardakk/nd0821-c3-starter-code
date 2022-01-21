@@ -36,9 +36,9 @@ def train_model(X_train, y_train):
     cs = GridSearchCV(gb_model, parameter_space, n_jobs=-1, verbose=2)
     cs.fit(X_train, y_train)
 
-
-    print('After hyper paramter tunning => best model: %s Hyperparams: %s best score: %s' %
-          (cs.best_estimator_, cs.best_params_, cs.best_score_))
+    print(
+        'After hyper paramter tunning => best model: %s Hyperparams: %s best score: %s' %
+        (cs.best_estimator_, cs.best_params_, cs.best_score_))
 
     return cs.best_estimator_
 
@@ -89,7 +89,7 @@ def test_slice(data, feature_col):
         model : model to evaluate
         data (df): data to slice
         feature_col : name of the column to slice
-        
+
     """
 
     with open('model/gb_model.pkl', 'rb') as f:

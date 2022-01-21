@@ -6,11 +6,11 @@ from starter.starter.ml.data import process_data
 from starter.starter.ml.model import inference
 
 
-
 @pytest.fixture()
 def data():
     data = pd.read_csv('starter/data/census_cleaned.csv')
     return data
+
 
 @pytest.fixture()
 def X(data):
@@ -30,6 +30,7 @@ def X(data):
     )
 
     return X
+
 
 @pytest.fixture()
 def model(X, y):
@@ -57,7 +58,7 @@ def y(data):
 
     return y
 
-    
+
 def test_inference(model, X):
     pred = inference(model, X)
     assert len(X) == len(pred)
@@ -65,6 +66,7 @@ def test_inference(model, X):
 
 def test_weekly_hour(data):
     assert data["hours-per-week"].between(1, 99).shape[0] == data.shape[0]
+
 
 def test_mismatch_length(X, y):
     assert len(X) == len(y)

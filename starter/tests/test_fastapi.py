@@ -11,7 +11,6 @@ def test_root():
     assert response.json() == 'Welcome to project 3!'
 
 
-
 def test_negative_sample():
 
     data = {
@@ -36,7 +35,8 @@ def test_negative_sample():
 
     assert response.status_code == 200
     assert response.json() == '>50k'
-    
+
+
 def test_positive_sample():
 
     data = {
