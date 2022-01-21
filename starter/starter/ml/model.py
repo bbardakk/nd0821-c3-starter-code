@@ -1,11 +1,8 @@
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import GridSearchCV
-
 from .data import process_data
-
 import pickle
-import pandas as pd
 
 
 # Optional: implement hyperparameter tuning.
