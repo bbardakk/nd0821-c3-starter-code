@@ -1,0 +1,4 @@
+outs:
+- md5: 9de73830ba9042f7212622c06f6c1ab4
+  size: 1633
+  path: education_slice_output.txt

@@ -1,4 +1,6 @@
 [core]
-    remote = starter/data/census.csv
+    remote = myremote
 ['remote "starter/data/census.csv"']
+    url = s3://bb-udacity-project-3
+['remote "myremote"']
     url = s3://bb-udacity-project-3
