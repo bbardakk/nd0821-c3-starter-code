@@ -2,8 +2,8 @@ import pytest
 from sklearn.model_selection import train_test_split
 from sklearn.dummy import DummyClassifier
 import pandas as pd
-from starter.ml.data import process_data
-from starter.ml.model import inference
+from starter.starter.ml.data import process_data
+from starter.starter.ml.model import inference
 
 
 

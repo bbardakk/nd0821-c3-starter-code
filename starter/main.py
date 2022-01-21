@@ -1,8 +1,8 @@
 # Put the code for your API here.
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
-from starter.ml.model import inference
-from starter.ml.data import process_data
+from starter.starter.ml.model import inference
+from starter.starter.ml.data import process_data
 import pickle
 import pandas as pd 
 
@@ -22,13 +22,13 @@ class Data(BaseModel):
     hours_per_week: int = Field(None, example=0)
     native_country: str = Field(None, example='United-States')
 
-with open('model/gb_model.pkl', 'rb') as f:
+with open('starter/model/gb_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-with open('model/encoder.pkl', 'rb') as f:
+with open('starter/model/encoder.pkl', 'rb') as f:
     encoder = pickle.load(f)
 
-with open('model/lb.pkl', 'rb') as f:
+with open('starter/model/lb.pkl', 'rb') as f:
     lb = pickle.load(f)
 
 
