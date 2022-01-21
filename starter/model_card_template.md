@@ -13,9 +13,17 @@ The name of data is "census-income". This dataset consist of 8 categorical and 6
 
 ## Evaluation Data
 
+%20 of the whole data is used for testing the modelling.
+
 ## Metrics
-_Please include the metrics used and your model's performance on those metrics._
+
+We evaluate our models with three different metrics. 
+
+Precision: 0.832
+Recall: 0.443
+Fbeta: 0.578
 
 ## Ethical Considerations
 
-## Caveats and Recommendations
+The data is already anınymized. 
+
