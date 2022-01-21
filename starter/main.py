@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 from starter.starter.ml.model import inference
 from starter.starter.ml.data import process_data
 import pickle
-
+import pandas as pd
 
 class Data(BaseModel):
     age: int = Field(None, example=23)
