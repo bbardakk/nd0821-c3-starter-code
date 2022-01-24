@@ -17,13 +17,19 @@ The name of data is "census-income". This dataset consist of 8 categorical and 6
 
 ## Metrics
 
-We evaluate our models with three different metrics. 
+We evaluate our models with three different metrics. Precision, Recall and Fbeta is selected because of our problem is formulated as classification.
 
 Precision: 0.832
 Recall: 0.443
 Fbeta: 0.578
 
+
+## Caveats and Recommendation
+
+The trained model always gives higher Precision score than Recall. This means that when the model says "1", it says confidently, however it misses many positive instances. 
+
+
 ## Ethical Considerations
 
-The data is already anınymized. 
+This open source data (1994 census database) is already anonymized. The fields like name, ISSN number, date of birth are not presented. The data may have some bias based on race or sex which can be analyzed more detaily to understand. 
 
